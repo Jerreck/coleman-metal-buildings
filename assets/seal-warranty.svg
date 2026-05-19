@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="40-Year Panel Warranty">
+  <defs>
+    <path id="ring-top" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0"></path>
+    <path id="ring-bot" d="M 100,100 m -78,0 a 78,78 0 1,0 156,0"></path>
+  </defs>
+  
+  <circle cx="100" cy="100" r="92" fill="#c89545"></circle>
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#8a6021" stroke-width="2"></circle>
+  <circle cx="100" cy="100" r="68" fill="#15171a"></circle>
+  <circle cx="100" cy="100" r="64" fill="none" stroke="#c89545" stroke-width="1.5"></circle>
+
+  
+  <text font-family="&#39;Oswald&#39;, sans-serif" font-weight="700" font-size="13" letter-spacing="0.22em" fill="#15171a">
+    <textPath href="#ring-top" startOffset="50%" text-anchor="middle">COLEMAN · WORKMANSHIP · GUARANTEE</textPath>
+  </text>
+  <text font-family="&#39;Oswald&#39;, sans-serif" font-weight="600" font-size="11" letter-spacing="0.28em" fill="#15171a">
+    <textPath href="#ring-bot" startOffset="50%" text-anchor="middle">KINGSTON · OK · EST · 2014</textPath>
+  </text>
+
+  
+  <text x="100" y="98" text-anchor="middle" font-family="&#39;Alfa Slab One&#39;, Georgia, serif" font-size="44" fill="#c89545">40</text>
+  <text x="100" y="120" text-anchor="middle" font-family="&#39;Oswald&#39;, sans-serif" font-weight="600" font-size="10" letter-spacing="0.24em" fill="#efe8d7">YEAR</text>
+  <text x="100" y="134" text-anchor="middle" font-family="&#39;Oswald&#39;, sans-serif" font-weight="600" font-size="10" letter-spacing="0.24em" fill="#efe8d7">WARRANTY</text>
+
+  
+  <text x="62" y="106" font-family="serif" font-size="10" fill="#c89545">★</text>
+  <text x="132" y="106" font-family="serif" font-size="10" fill="#c89545">★</text>
+</svg>

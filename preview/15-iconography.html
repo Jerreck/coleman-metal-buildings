@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Iconography</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .wrap { padding: 26px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .col-head { font-family: var(--font-rail); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--barn-red); margin-bottom: 10px; }
+  .icon-row { display:flex; gap: 18px; flex-wrap: wrap; }
+  .ic { display:flex; flex-direction: column; align-items: center; gap: 6px; min-width: 56px; }
+  .ic svg { width: 32px; height: 32px; }
+  .ic .lab { font-family: var(--font-rail); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--steel); }
+  .note { font-family: var(--font-body); font-size: 12px; color: var(--steel); line-height: 1.5; }
+  .bullet-list { font-family: var(--font-body); font-size: 14px; color: var(--ink); }
+  .bullet-list .b { display:flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .bullet-list .b::before { content:""; width: 8px; height: 8px; background: var(--barn-red); display:block; }
+</style></head>
+<body>
+<div class="card-frame cream">
+  <div class="wrap">
+    <div>
+      <div class="col-head">Line Icons · Lucide · 2px stroke</div>
+      <div class="icon-row">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#15171a" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M3 11 12 3l9 8v10H3z"/><path d="M9 21V12h6v9"/></svg>
+          <div class="lab">Barn</div>
+        </div>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#15171a" stroke-width="2" stroke-linecap="square"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg>
+          <div class="lab">Shop</div>
+        </div>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#15171a" stroke-width="2" stroke-linecap="square"><path d="M2 12h20"/><path d="M4 12V8h16v4"/><path d="M6 12v8"/><path d="M18 12v8"/></svg>
+          <div class="lab">Porch</div>
+        </div>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#15171a" stroke-width="2" stroke-linecap="square"><path d="M3 7h18v10H3z"/><path d="M3 11h18"/><path d="M7 7v10"/><path d="M17 7v10"/></svg>
+          <div class="lab">RV Cover</div>
+        </div>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#15171a" stroke-width="2" stroke-linecap="square"><path d="M5 12h14"/><path d="M5 6h14"/><path d="M5 18h14"/></svg>
+          <div class="lab">Spec</div>
+        </div>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#15171a" stroke-width="2" stroke-linecap="square"><path d="M22 16.92V21a1 1 0 0 1-1.1 1A19 19 0 0 1 2 4.1 1 1 0 0 1 3 3h4.09a1 1 0 0 1 1 .75l1 4a1 1 0 0 1-.29 1L7 10.5a16 16 0 0 0 6.5 6.5l1.75-1.75a1 1 0 0 1 1-.29l4 1a1 1 0 0 1 .75 1z"/></svg>
+          <div class="lab">Call</div>
+        </div>
+      </div>
+      <div class="note" style="margin-top:14px">Lucide line icons at 2px weight, square caps. Used only for service categories, spec rows, and the contact strip.</div>
+    </div>
+    <div>
+      <div class="col-head">Bullets &amp; emphasis</div>
+      <div class="bullet-list">
+        <div class="b">14-gauge framing &amp; 26-gauge panel</div>
+        <div class="b">Wind-rated to 90 MPH standard</div>
+        <div class="b">40-year panel warranty</div>
+        <div class="b">Installed by Coleman crews — not subbed out</div>
+      </div>
+      <div class="note" style="margin-top:14px">A 8×8 barn-red square replaces bullet glyphs. Never <span style="color:#15171a">•</span> or <span style="color:#15171a">→</span> in body lists.</div>
+    </div>
+  </div>
+</div>
+</body></html>

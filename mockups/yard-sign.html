@@ -1,0 +1,108 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>Yard Sign — Coleman Metal Buildings</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100vh; background: #c8c5be; padding: 40px; display:flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; -webkit-font-smoothing: antialiased; font-family: var(--font-body); }
+  .sign-wrap { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+  .sign-caption { font-family: var(--font-rail); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.22em; color: #444; }
+
+  /* 24×18 yard sign, 4:3 corrugated plastic */
+  .yard {
+    width: 720px; height: 540px;
+    background: var(--cream);
+    color: var(--ink);
+    position: relative;
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,.4), 0 4px 12px rgba(0,0,0,.2);
+    padding: 36px 44px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  /* H-stake legs */
+  .yard::before, .yard::after {
+    content:""; position:absolute; width: 6px; height: 80px; background: #555;
+    bottom: -80px;
+  }
+  .yard::before { left: 90px; }
+  .yard::after  { right: 90px; }
+
+  .stripe-top, .stripe-bot { position: absolute; left: 0; right: 0; height: 16px; background: var(--barn-red); }
+  .stripe-top { top: 0; }
+  .stripe-bot { bottom: 0; }
+
+  .yard-eyebrow {
+    font-family: var(--font-rail);
+    font-weight: 700; font-size: 18px;
+    text-transform: uppercase; letter-spacing: 0.28em;
+    color: var(--barn-red);
+    margin-top: 20px;
+    text-align: center;
+  }
+  .yard-headline {
+    font-family: var(--font-display);
+    font-size: 110px; line-height: 0.92;
+    letter-spacing: -0.015em;
+    text-align: center;
+    margin-top: 18px;
+  }
+  .yard-sub {
+    font-family: var(--font-rail);
+    font-weight: 600; font-size: 24px;
+    text-transform: uppercase; letter-spacing: 0.20em;
+    text-align: center;
+    margin-top: 14px;
+    color: var(--ink);
+  }
+  .yard-rule { height: 3px; background: var(--ink); width: 70%; margin: 22px auto 0; }
+  .yard-foot {
+    display:flex; justify-content: space-between; align-items: center;
+    margin-top: 20px;
+    font-family: var(--font-display);
+    font-size: 32px; letter-spacing: -0.01em;
+  }
+  .yard-foot .web { font-family: var(--font-rail); font-weight: 600; font-size: 20px; text-transform: uppercase; letter-spacing: 0.18em; }
+
+  /* Build-In-Progress alternate */
+  .sign-2 .yard { background: var(--ink); color: var(--cream); }
+  .sign-2 .yard .yard-eyebrow { color: var(--cream); opacity: .8; }
+  .sign-2 .yard .yard-sub { color: var(--cream); }
+  .sign-2 .yard-rule { background: var(--barn-red); width: 80%; }
+  .sign-2 .yard-foot { color: var(--cream); }
+</style></head>
+<body>
+
+<div class="sign-wrap">
+  <div class="yard">
+    <div class="stripe-top"></div>
+    <div class="yard-eyebrow">★ KINGSTON · OK · SINCE 2014 ★</div>
+    <div class="yard-headline">COLEMAN</div>
+    <div class="yard-sub">METAL BUILDINGS</div>
+    <div class="yard-rule"></div>
+    <div class="yard-foot">
+      <span>(580) 555-0142</span>
+      <span class="web">COLEMANMETAL.COM</span>
+    </div>
+    <div class="stripe-bot"></div>
+  </div>
+  <div class="sign-caption">Yard / Lawn Sign · 24″ × 18″ · corrugated plastic</div>
+</div>
+
+<div class="sign-wrap sign-2">
+  <div class="yard">
+    <div class="stripe-top"></div>
+    <div class="yard-eyebrow">A COLEMAN BUILD IN PROGRESS</div>
+    <div class="yard-headline" style="font-size: 90px;">BUILT<br>RIGHT.</div>
+    <div class="yard-rule"></div>
+    <div class="yard-foot" style="margin-top: auto;">
+      <span style="font-size: 24px;">(580) 555-0142</span>
+      <span class="web" style="font-size: 16px;">COLEMANMETAL.COM</span>
+    </div>
+    <div class="stripe-bot"></div>
+  </div>
+  <div class="sign-caption">Job Site Banner · ink-ground variant</div>
+</div>
+
+</body></html>

@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Eyebrow & rails</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .wrap { padding: 26px 32px; display:flex; flex-direction:column; gap: 22px; }
+  .stripe { height: 6px; background: var(--barn-red); width: 100%; }
+  .stripe-ink { height: 4px; background: var(--ink); width: 100%; }
+  .hairline { height: 1px; background: var(--steel-light); width: 100%; }
+  .row { display:flex; align-items:center; gap: 18px; }
+  .tag { font-family: var(--font-rail); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--steel); min-width: 120px; }
+  .eyebrow { display:inline-flex; align-items:center; gap: 12px; font-family: var(--font-rail); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.20em; color: var(--barn-red); }
+  .eyebrow::before { content:""; width: 24px; height: 4px; background: var(--barn-red); display:block; }
+  .label-band { background: var(--ink); color: var(--cream); padding: 10px 16px; font-family: var(--font-rail); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.22em; display:inline-block; }
+</style></head>
+<body>
+<div class="card-frame cream">
+  <div class="wrap">
+    <div class="row"><div class="tag">Brand stripe 6px</div><div class="stripe" style="flex:1"></div></div>
+    <div class="row"><div class="tag">I-beam rule 4px</div><div class="stripe-ink" style="flex:1"></div></div>
+    <div class="row"><div class="tag">Hairline 1px</div><div class="hairline" style="flex:1"></div></div>
+    <div class="row"><div class="tag">Eyebrow</div><div class="eyebrow">Our Services</div></div>
+    <div class="row"><div class="tag">Label band</div><div class="label-band">POLE BARNS · PORCHES · SHOPS</div></div>
+  </div>
+</div>
+</body></html>

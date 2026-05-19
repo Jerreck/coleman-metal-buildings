@@ -1,0 +1,31 @@
+/* shared preview card base */
+@import url('../colors_and_type.css');
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--cream);
+  font-family: var(--font-body);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.card-frame {
+  padding: 28px 32px;
+  width: 100%;
+  min-height: 100%;
+}
+.card-frame.ink   { background: var(--ink); color: var(--cream); }
+.card-frame.bone  { background: var(--bone); }
+.card-frame.cream { background: var(--cream); }
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 12px 14px;
+  border-radius: 0;
+}
+.swatch .name { font-family: var(--font-rail); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; }
+.swatch .hex  { font-family: var(--font-mono); font-size: 11px; opacity: .8; }

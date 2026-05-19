@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Since 2014">
+  <defs>
+    <path id="since-top" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0"></path>
+    <path id="since-bot" d="M 100,100 m -78,0 a 78,78 0 1,0 156,0"></path>
+  </defs>
+  <circle cx="100" cy="100" r="92" fill="#efe8d7"></circle>
+  <circle cx="100" cy="100" r="86" fill="none" stroke="#15171a" stroke-width="2"></circle>
+  <circle cx="100" cy="100" r="76" fill="none" stroke="#15171a" stroke-width="1"></circle>
+
+  <text font-family="&#39;Oswald&#39;, sans-serif" font-weight="700" font-size="12" letter-spacing="0.28em" fill="#15171a">
+    <textPath href="#since-top" startOffset="50%" text-anchor="middle">FAMILY · OWNED · OPERATED</textPath>
+  </text>
+  <text font-family="&#39;Oswald&#39;, sans-serif" font-weight="600" font-size="11" letter-spacing="0.28em" fill="#b8351e">
+    <textPath href="#since-bot" startOffset="50%" text-anchor="middle">KINGSTON · OKLAHOMA</textPath>
+  </text>
+
+  <text x="100" y="86" text-anchor="middle" font-family="&#39;Oswald&#39;, sans-serif" font-weight="600" font-size="13" letter-spacing="0.22em" fill="#15171a">SINCE</text>
+  <text x="100" y="138" text-anchor="middle" font-family="&#39;Alfa Slab One&#39;, Georgia, serif" font-size="44" fill="#b8351e">2014</text>
+
+  <line x1="48" y1="100" x2="68" y2="100" stroke="#15171a" stroke-width="1.5"></line>
+  <line x1="132" y1="100" x2="152" y2="100" stroke="#15171a" stroke-width="1.5"></line>
+</svg>

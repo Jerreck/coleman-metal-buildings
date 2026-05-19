@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" role="img" aria-label="Coleman Metal Buildings LLC">
+  <defs>
+    
+  </defs>
+  
+  <rect x="10" y="14" width="500" height="6" class="red"></rect>
+
+  
+  <text x="260" y="100" text-anchor="middle" class="display ink" font-size="68">COLEMAN</text>
+
+  
+  <rect x="10" y="120" width="500" height="2" class="ink"></rect>
+  <text x="260" y="146" text-anchor="middle" class="rail ink" font-size="16">METAL BUILDINGS · KINGSTON, OK</text>
+
+  
+  <rect x="10" y="160" width="500" height="6" class="red"></rect>
+</svg>

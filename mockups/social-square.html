@@ -1,0 +1,104 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>Social Posts — Coleman Metal Buildings</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100vh; background: #ddd9d0; padding: 48px; display:flex; align-items: flex-start; justify-content: center; gap: 40px; flex-wrap: wrap; -webkit-font-smoothing: antialiased; font-family: var(--font-body); }
+  .stack { display:flex; flex-direction: column; gap: 14px; align-items: center; }
+  .cap { font-family: var(--font-rail); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.20em; color: #444; }
+
+  /* 1080×1080 → displayed at 480 */
+  .post {
+    width: 480px; height: 480px;
+    box-shadow: 0 24px 48px -16px rgba(0,0,0,.35);
+    position: relative; overflow: hidden;
+  }
+
+  /* ---- Post 1: Announcement / brand ---- */
+  .p1 { background: var(--cream); color: var(--ink); padding: 32px 36px; display:flex; flex-direction:column; justify-content: space-between; }
+  .p1 .stripe { position: absolute; top: 0; left: 0; right: 0; height: 12px; background: var(--barn-red); }
+  .p1 .eb { font-family: var(--font-rail); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.24em; color: var(--barn-red); display:inline-flex; align-items:center; gap: 12px; margin-top: 16px; }
+  .p1 .eb::before { content:""; width: 28px; height: 4px; background: var(--barn-red); display:block; }
+  .p1 h2 { font-family: var(--font-display); font-size: 68px; line-height: 0.96; letter-spacing: -0.015em; margin: 18px 0 0; }
+  .p1 .rule { height: 3px; background: var(--ink); margin: 22px 0; }
+  .p1 .foot { display:flex; justify-content: space-between; align-items: flex-end; }
+  .p1 .word { font-family: var(--font-display); font-size: 24px; letter-spacing: -0.01em; }
+  .p1 .web  { font-family: var(--font-rail); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.20em; }
+
+  /* ---- Post 2: Photo-first build reveal ---- */
+  .p2 {
+    background:
+      linear-gradient(180deg, rgba(21,23,26,0) 30%, rgba(21,23,26,.75) 100%),
+      linear-gradient(170deg, #d4a06a 0%, #b87038 25%, #6b4530 55%, #2d3a42 85%, #15171a 100%);
+    color: var(--cream);
+    padding: 28px 32px;
+    display:flex; flex-direction: column; justify-content: space-between;
+  }
+  .p2 .top { display:flex; justify-content: space-between; align-items: flex-start; }
+  .p2 .mark { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.01em; color: var(--cream); }
+  .p2 .badge { font-family: var(--font-rail); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.22em; color: var(--cream); background: var(--barn-red); padding: 6px 12px; }
+  .p2 .meta { font-family: var(--font-rail); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.22em; color: var(--cream); opacity: .85; }
+  .p2 h2 { font-family: var(--font-display); font-size: 54px; line-height: 0.96; letter-spacing: -0.015em; margin: 8px 0 0; color: var(--cream); max-width: 95%; }
+  .p2 .stripe-bot { position: absolute; bottom: 0; left: 0; right: 0; height: 10px; background: var(--barn-red); }
+
+  /* ---- Post 3: Stat / pull quote ---- */
+  .p3 { background: var(--ink); color: var(--cream); padding: 36px 36px; display:flex; flex-direction:column; justify-content: center; align-items: flex-start; }
+  .p3 .eb { font-family: var(--font-rail); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.28em; color: var(--barn-red); }
+  .p3 .num { font-family: var(--font-display); font-size: 220px; line-height: 0.9; letter-spacing: -0.03em; color: var(--cream); margin: 10px 0 0; }
+  .p3 .num small { color: var(--barn-red); font-size: 80px; vertical-align: super; margin-left: 8px; }
+  .p3 .lab { font-family: var(--font-rail); font-weight: 600; font-size: 17px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--cream); margin-top: 8px; }
+  .p3 .foot { margin-top: auto; padding-top: 30px; display:flex; justify-content: space-between; align-items: flex-end; width:100%; font-family: var(--font-rail); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--steel-light); }
+  .p3 .stripe-top { position: absolute; top: 0; left: 0; right: 0; height: 10px; background: var(--barn-red); }
+</style></head>
+<body>
+
+<div class="stack">
+  <div class="post p1">
+    <div class="stripe"></div>
+    <div>
+      <div class="eb">Now Booking · Spring 2026</div>
+      <h2>Custom metal buildings, engineered to last.</h2>
+    </div>
+    <div>
+      <div class="rule"></div>
+      <div class="foot">
+        <div class="word">COLEMAN</div>
+        <div class="web">(580) 555-0142<br>COLEMANMETAL.COM</div>
+      </div>
+    </div>
+  </div>
+  <div class="cap">Announcement · 1080 × 1080</div>
+</div>
+
+<div class="stack">
+  <div class="post p2">
+    <div class="top">
+      <div class="mark">COLEMAN</div>
+      <div class="badge">JUST FINISHED</div>
+    </div>
+    <div>
+      <div class="meta" style="margin-bottom: 8px;">★ 40×60 SHOP · MADILL, OK</div>
+      <h2>Six-bay shop, two coats of paint, zero change orders.</h2>
+    </div>
+    <div class="stripe-bot"></div>
+  </div>
+  <div class="cap">Build reveal · photo-first</div>
+</div>
+
+<div class="stack">
+  <div class="post p3">
+    <div class="stripe-top"></div>
+    <div class="eb">Built In Oklahoma</div>
+    <div class="num">600<small>+</small></div>
+    <div class="lab">BUILDINGS ERECTED<br>SINCE 2014</div>
+    <div class="foot">
+      <span>COLEMAN METAL BUILDINGS</span>
+      <span>KINGSTON · OK</span>
+    </div>
+  </div>
+  <div class="cap">Stat post · ink ground</div>
+</div>
+
+</body></html>

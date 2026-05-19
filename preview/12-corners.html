@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Corners</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .wrap { padding: 28px 32px; display:flex; gap: 24px; align-items: flex-end; }
+  .item { display:flex; flex-direction: column; align-items: center; gap: 10px; }
+  .box { width: 110px; height: 110px; background: var(--ink); }
+  .seal { width: 110px; height: 110px; border-radius: 50%; background: var(--gold); }
+  .tag { font-family: var(--font-rail); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink); }
+  .val { font-family: var(--font-mono); font-size: 11px; color: var(--steel); }
+</style></head>
+<body>
+<div class="card-frame cream">
+  <div class="wrap">
+    <div class="item"><div class="box" style="border-radius: 0"></div><div class="tag">radius-0</div><div class="val">0 · default</div></div>
+    <div class="item"><div class="box" style="border-radius: 2px"></div><div class="tag">radius-sm</div><div class="val">2px · web btn</div></div>
+    <div class="item"><div class="box" style="border-radius: 4px"></div><div class="tag">radius-md</div><div class="val">4px · web card</div></div>
+    <div class="item"><div class="seal"></div><div class="tag">radius-full</div><div class="val">seals only</div></div>
+  </div>
+</div>
+</body></html>

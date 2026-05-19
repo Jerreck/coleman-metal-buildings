@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Cards</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .wrap { padding: 24px 28px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+  .card-soft { background: var(--bone); border-radius: 4px; padding: 22px 22px; box-shadow: var(--shadow-card); }
+  .card-bord { background: var(--bone); border: 1px solid var(--ink); padding: 22px 22px; }
+  .card-dark { background: var(--ink-soft); color: var(--cream); padding: 22px 22px; }
+  .eb { display:inline-flex; align-items:center; gap: 10px; font-family: var(--font-rail); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.20em; color: var(--barn-red); margin-bottom: 12px; }
+  .eb::before { content:""; width: 18px; height: 3px; background: var(--barn-red); display:block; }
+  .title { font-family: var(--font-display); font-size: 22px; line-height: 1.1; letter-spacing: -0.01em; }
+  .body  { font-family: var(--font-body); font-size: 13px; line-height: 1.5; margin-top: 8px; color: var(--steel); }
+  .card-dark .body { color: var(--steel-light); }
+</style></head>
+<body>
+<div class="card-frame cream" style="padding:0">
+  <div class="wrap">
+    <div class="card-soft">
+      <div class="eb">Soft Card</div>
+      <div class="title">Pole Barns</div>
+      <div class="body">For cream backgrounds. Light shadow, 4px radius.</div>
+    </div>
+    <div class="card-bord">
+      <div class="eb">Bordered</div>
+      <div class="title">Quote Packet</div>
+      <div class="body">For print. 1px ink border, square corners.</div>
+    </div>
+    <div class="card-dark">
+      <div class="eb" style="color: #ff8a72">On Ink</div>
+      <div class="title" style="color: var(--cream)">Shop Buildings</div>
+      <div class="body">Card on dark surfaces. No shadow.</div>
+    </div>
+  </div>
+</div>
+</body></html>

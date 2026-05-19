@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Voice</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .wrap { padding: 26px 32px; display:grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .col h4 { font-family: var(--font-rail); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; margin: 0 0 12px; }
+  .col.yes h4 { color: var(--barn-red); }
+  .col.no  h4 { color: var(--steel); }
+  .line { font-family: var(--font-body); font-size: 14px; line-height: 1.5; padding: 8px 0; border-bottom: 1px solid var(--steel-light); color: var(--ink); }
+  .line:last-child { border-bottom: 0; }
+  .col.no .line { color: var(--steel); text-decoration: line-through; text-decoration-color: rgba(184,53,30,.6); text-decoration-thickness: 1px; }
+</style></head>
+<body>
+<div class="card-frame cream">
+  <div class="wrap">
+    <div class="col yes">
+      <h4>✓ Coleman sounds like</h4>
+      <div class="line">Custom metal buildings, engineered to last.</div>
+      <div class="line">Family-owned in Kingston, OK since 2014.</div>
+      <div class="line">Every barn is built to the wind and snow loads your property actually sees.</div>
+      <div class="line">Talk to a builder — not a sales rep.</div>
+    </div>
+    <div class="col no">
+      <h4>✗ Coleman does NOT sound like</h4>
+      <div class="line">Built Tough. Built Right. Built Here!</div>
+      <div class="line">Y'all need a barn? We gotcha covered.</div>
+      <div class="line">World-class solutions for your metal building journey.</div>
+      <div class="line">🛠️ Premium structures unlocked 🚜</div>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="CM mark">
+  <rect x="0" y="0" width="200" height="200" fill="#15171a"></rect>
+  <rect x="14" y="14" width="172" height="6" fill="#b8351e"></rect>
+  <rect x="14" y="180" width="172" height="6" fill="#b8351e"></rect>
+  <text x="100" y="125" text-anchor="middle" font-family="&#39;Alfa Slab One&#39;, Georgia, serif" font-size="96" fill="#efe8d7">CM</text>
+</svg>
