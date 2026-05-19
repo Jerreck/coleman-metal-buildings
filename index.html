@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Coleman Metal Buildings — Custom metal buildings, engineered to last</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* ---------- Layout ---------- */
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+  @media (max-width: 900px) { .container { padding: 0 24px; } }
+
+  /* ---------- Top brand stripe ---------- */
+  .top-stripe { height: 6px; background: var(--barn-red); }
+
+  /* ---------- Header ---------- */
+  header.site {
+    background: var(--cream);
+    border-bottom: 1px solid var(--steel-light);
+    position: sticky; top: 0; z-index: 50;
+  }
+  .site-inner { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand .wordmark { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.01em; color: var(--ink); line-height: 1; }
+  .brand .sub { font-family: var(--font-rail); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.20em; color: var(--barn-red); margin-top: 4px; }
+  nav.primary { display: flex; align-items: center; gap: 28px; }
+  nav.primary a { font-family: var(--font-rail); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink); }
+  nav.primary a:hover { color: var(--barn-red); }
+  nav.primary .phone { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.01em; color: var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    color: var(--cream);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(21,23,26,.20) 0%, rgba(21,23,26,.65) 70%, rgba(21,23,26,.85) 100%),
+      linear-gradient(170deg, #d4a06a 0%, #b87038 24%, #6b4530 50%, #2d3a42 80%, #15171a 100%);
+    z-index: -1;
+  }
+  /* faux horizon line */
+  .hero-bg::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: 28%;
+    height: 1px;
+    background: rgba(255,255,255,.10);
+  }
+  .hero-inner { padding: 120px 0 140px; max-width: 880px; }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+    color: var(--cream);
+  }
+  .hero .lede {
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--cream);
+    max-width: 620px;
+    margin: 0 0 36px;
+    opacity: .92;
+  }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .hero-meta {
+    position: absolute; bottom: 28px; left: 0; right: 0;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-family: var(--font-rail); font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.22em; color: var(--cream); opacity: .8;
+  }
+
+  /* ---------- Label band ---------- */
+  .label-band {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 18px 0;
+    overflow: hidden;
+  }
+  .label-band-inner {
+    display: flex; align-items: center; gap: 28px; justify-content: center;
+    font-family: var(--font-rail); font-weight: 600; font-size: 14px;
+    text-transform: uppercase; letter-spacing: 0.24em;
+    color: var(--cream);
+  }
+  .label-band-inner span.sep { color: var(--barn-red); }
+
+  /* ---------- Section ---------- */
+  section { padding: 110px 0; }
+  .section-head { margin-bottom: 56px; max-width: 760px; }
+  .section-title { font-family: var(--font-display); font-size: clamp(36px, 4vw, 56px); line-height: 1.05; letter-spacing: -0.01em; margin: 16px 0 0; }
+  .section-body { font-family: var(--font-body); font-size: 18px; line-height: 1.55; color: var(--steel); margin-top: 18px; max-width: 640px; }
+
+  /* ---------- Services grid ---------- */
+  .services { background: var(--cream); }
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 900px) { .svc-grid { grid-template-columns: 1fr 1fr; } }
+  .svc {
+    background: var(--bone);
+    border: 1px solid transparent;
+    padding: 36px 32px;
+    border-radius: 4px;
+    transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+    cursor: pointer;
+  }
+  .svc:hover { border-color: var(--ink); transform: translateY(-2px); }
+  .svc-num {
+    font-family: var(--font-mono); font-size: 11px; color: var(--steel);
+    display:flex; align-items:center; gap: 10px; margin-bottom: 18px;
+  }
+  .svc-num::before { content:""; width: 18px; height: 3px; background: var(--barn-red); display:block; }
+  .svc-icon { color: var(--ink); margin-bottom: 28px; }
+  .svc-icon svg { width: 36px; height: 36px; }
+  .svc h3 { font-family: var(--font-display); font-size: 28px; line-height: 1.08; letter-spacing: -0.01em; margin: 0 0 10px; }
+  .svc p { font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--steel); margin: 0 0 18px; }
+  .svc .more { font-family: var(--font-rail); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--barn-red); }
+
+  /* ---------- Trust / Why ---------- */
+  .why { background: var(--ink); color: var(--cream); position: relative; }
+  .why .eyebrow, .why .section-title, .why .section-body { color: var(--cream); }
+  .why .section-body { color: var(--steel-light); }
+  .why-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: flex-start; }
+  @media (max-width: 900px) { .why-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--steel); border: 1px solid var(--steel); }
+  .stat { background: var(--ink); padding: 36px 28px; }
+  .stat .num { font-family: var(--font-display); font-size: 64px; line-height: 1; letter-spacing: -0.02em; color: var(--cream); }
+  .stat .num .accent { color: var(--barn-red); }
+  .stat .lab { font-family: var(--font-rail); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--steel-light); margin-top: 12px; }
+
+  .why-points { list-style: none; padding: 0; margin: 24px 0 0; }
+  .why-points li { display: grid; grid-template-columns: 16px 1fr; gap: 14px; align-items: start; padding: 14px 0; border-bottom: 1px solid #2a2d33; }
+  .why-points li:last-child { border-bottom: 0; }
+  .why-points li::before { content:""; width: 8px; height: 8px; background: var(--barn-red); display:block; margin-top: 9px; }
+  .why-points strong { display:block; font-family: var(--font-rail); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--cream); margin-bottom: 4px; }
+  .why-points span { font-family: var(--font-body); font-size: 15px; color: var(--steel-light); line-height: 1.55; }
+
+  /* ---------- Gallery ---------- */
+  .gallery { background: var(--cream); }
+  .gal-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap: 16px; }
+  .gal-grid .g { position: relative; overflow: hidden; border-radius: 0; }
+  .gal-grid .g.tall { grid-row: span 2; }
+  .gal-grid .g .bg {
+    position: absolute; inset: 0;
+    background-blend-mode: multiply;
+  }
+  .g1 .bg { background: linear-gradient(170deg, #d4a06a, #6b4530 70%, #2d3a42); }
+  .g2 .bg { background: linear-gradient(170deg, #b0915a, #4a3d2c 70%, #1a1a1a); }
+  .g3 .bg { background: linear-gradient(170deg, #d0b890, #7a6840 60%, #2a2a2a); }
+  .g4 .bg { background: linear-gradient(170deg, #c8a474, #50403a 60%, #1c1c1c); }
+  .g5 .bg { background: linear-gradient(170deg, #aa8f60, #3e3326 60%, #15171a); }
+  .gal-grid .g .meta {
+    position: absolute; left: 16px; bottom: 14px; color: var(--cream);
+    font-family: var(--font-rail); font-weight: 600; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.20em;
+  }
+  .gal-grid .g .meta::before { content:""; display:block; width: 18px; height: 3px; background: var(--barn-red); margin-bottom: 8px; }
+  .gal-cta { margin-top: 36px; display:flex; justify-content: space-between; align-items: center; }
+
+  /* ---------- Process ---------- */
+  .process { background: var(--bone); }
+  .proc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+  @media (max-width: 900px) { .proc-grid { grid-template-columns: 1fr 1fr; } }
+  .proc {
+    padding: 36px 28px 32px;
+    border-right: 1px solid var(--steel-light);
+  }
+  .proc:last-child { border-right: 0; }
+  .proc .step { font-family: var(--font-display); font-size: 64px; line-height: 1; letter-spacing: -0.02em; color: var(--barn-red); }
+  .proc h4 { font-family: var(--font-rail); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.18em; margin: 18px 0 8px; }
+  .proc p { font-family: var(--font-body); font-size: 14px; line-height: 1.55; color: var(--steel); margin: 0; }
+
+  /* ---------- Testimonial ---------- */
+  .quote-section { background: var(--cream); padding: 80px 0 110px; }
+  .qt-wrap {
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center;
+  }
+  @media (max-width: 900px) { .qt-wrap { grid-template-columns: 1fr; gap: 32px; } }
+  .qt-photo {
+    aspect-ratio: 4/5;
+    background: linear-gradient(170deg, #d4a06a, #6b4530 60%, #2a2a2a);
+    position: relative;
+  }
+  .qt-photo::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--barn-red);
+  }
+  blockquote { margin: 0; font-family: var(--font-display); font-size: clamp(28px, 3.2vw, 44px); line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
+  .qt-attrib { margin-top: 28px; display:flex; align-items:center; gap: 16px; }
+  .qt-attrib .stripe { width: 24px; height: 4px; background: var(--barn-red); }
+  .qt-attrib .who { font-family: var(--font-rail); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--ink); }
+  .qt-attrib .who small { display:block; color: var(--steel); margin-top: 4px; font-weight: 500; }
+
+  /* ---------- CTA ---------- */
+  .cta { background: var(--barn-red); color: var(--cream); padding: 96px 0; }
+  .cta-wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+  @media (max-width: 900px) { .cta-wrap { grid-template-columns: 1fr; } }
+  .cta h2 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.01em; margin: 0; color: var(--cream); }
+  .cta p { font-family: var(--font-body); font-size: 18px; line-height: 1.55; margin: 18px 0 0; max-width: 540px; }
+  .cta .ph { font-family: var(--font-display); font-size: 36px; letter-spacing: -0.01em; }
+  .cta .ph-row { display:flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+
+  /* ---------- Footer ---------- */
+  footer.site { background: var(--ink); color: var(--cream); padding: 64px 0 28px; }
+  .ft-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid #2a2d33; }
+  @media (max-width: 900px) { .ft-top { grid-template-columns: 1fr 1fr; } }
+  .ft-wordmark { font-family: var(--font-display); font-size: 32px; letter-spacing: -0.01em; }
+  .ft-tag { font-family: var(--font-rail); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--barn-red); margin-top: 4px; }
+  .ft-blurb { font-family: var(--font-body); font-size: 14px; line-height: 1.55; color: var(--steel-light); margin-top: 16px; max-width: 320px; }
+  .ft-col h5 { font-family: var(--font-rail); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.22em; color: var(--barn-red); margin: 0 0 14px; }
+  .ft-col a { display:block; font-family: var(--font-body); font-size: 14px; color: var(--cream); padding: 4px 0; }
+  .ft-col a:hover { color: var(--barn-red); }
+  .ft-bottom { display:flex; justify-content: space-between; align-items: center; margin-top: 24px; font-family: var(--font-rail); font-size: 11px; text-transform: uppercase; letter-spacing: 0.20em; color: var(--steel-light); }
+
+  /* Lucide-ish line icons */
+  .ic { stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: square; stroke-linejoin: miter; }
+</style>
+</head>
+<body>
+
+<div class="top-stripe"></div>
+
+<header class="site">
+  <div class="container site-inner">
+    <a class="brand" href="#">
+      <div>
+        <div class="wordmark">COLEMAN</div>
+        <div class="sub">Metal Buildings · Kingston, OK</div>
+      </div>
+    </a>
+    <nav class="primary">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#process">Process</a>
+      <a href="#warranty">Warranty</a>
+      <span class="phone">(580) 555-0142</span>
+      <a class="btn btn-primary" href="#quote">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="eyebrow" style="color: var(--cream)"><span style="background: var(--barn-red); width: 24px; height: 4px; display:inline-block; margin-right: 12px"></span>Custom Metal Buildings · Southern OK &amp; North TX</div>
+    <h1>Custom metal buildings, engineered to last.</h1>
+    <p class="lede">Pole barns, porches, shops, and just about anything else you can frame in steel. Family-owned in Kingston, Oklahoma since 2014 — every job is run by a Coleman, never subbed out.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#quote">Request a Quote →</a>
+      <a class="btn btn-ghost-light" href="#gallery">See the Gallery</a>
+    </div>
+  </div>
+  <div class="container hero-meta">
+    <span>EST. 2014 · KINGSTON · OK</span>
+    <span>40-YEAR PANEL WARRANTY</span>
+  </div>
+</section>
+
+<div class="label-band">
+  <div class="container label-band-inner">
+    <span>POLE BARNS</span><span class="sep">·</span>
+    <span>SHOP BUILDINGS</span><span class="sep">·</span>
+    <span>PORCHES &amp; DECKS</span><span class="sep">·</span>
+    <span>EQUIPMENT SHEDS</span><span class="sep">·</span>
+    <span>RV COVERS</span>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Our Services</div>
+      <h2 class="section-title">Built right, the first time.</h2>
+      <p class="section-body">Six core builds, each engineered to the wind and snow loads your property actually sees — not a catalog spec sheet from another state.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-num">SVC · 01</div>
+        <div class="svc-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M3 11 12 3l9 8v10H3z"/><path d="M9 21V12h6v9"/></svg></div>
+        <h3>Pole Barns</h3>
+        <p>From 30×40 utility barns to fully enclosed equipment storage. Standard pitches 3/12–6/12, 14-gauge framing.</p>
+        <div class="more">Spec details →</div>
+      </div>
+      <div class="svc">
+        <div class="svc-num">SVC · 02</div>
+        <div class="svc-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Shop Buildings</h3>
+        <p>Insulated workshops, side-yard garages, and full commercial shop bays with rollup doors and concrete slabs.</p>
+        <div class="more">Spec details →</div>
+      </div>
+      <div class="svc">
+        <div class="svc-num">SVC · 03</div>
+        <div class="svc-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M2 12h20"/><path d="M4 12V8h16v4"/><path d="M6 12v8"/><path d="M18 12v8"/></svg></div>
+        <h3>Porches &amp; Decks</h3>
+        <p>Covered porches, pergolas, wrap-arounds, and stained cedar or composite decking that ties into the main house.</p>
+        <div class="more">Spec details →</div>
+      </div>
+      <div class="svc">
+        <div class="svc-num">SVC · 04</div>
+        <div class="svc-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M3 7h18v10H3z"/><path d="M3 11h18"/><path d="M7 7v10"/><path d="M17 7v10"/></svg></div>
+        <h3>RV &amp; Equipment Covers</h3>
+        <p>Open and partially-enclosed covers for RVs, boats, tractors, and equipment. Built to 90 MPH wind loads.</p>
+        <div class="more">Spec details →</div>
+      </div>
+      <div class="svc">
+        <div class="svc-num">SVC · 05</div>
+        <div class="svc-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 21h18"/><path d="M8 21v-7h8v7"/></svg></div>
+        <h3>Hay &amp; Equipment Barns</h3>
+        <p>Open-bay storage for round and square bales, tractors, and implements. Wide spans up to 60'.</p>
+        <div class="more">Spec details →</div>
+      </div>
+      <div class="svc">
+        <div class="svc-num">SVC · 06</div>
+        <div class="svc-icon"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/><path d="M2 10h20"/></svg></div>
+        <h3>Custom Builds</h3>
+        <p>Don't see your project? We frame just about anything in steel. Bring us a sketch and a parcel address.</p>
+        <div class="more">Spec details →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="warranty">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <div class="eyebrow">Why Coleman</div>
+        <h2 class="section-title">Family-owned. Engineered. Guaranteed in writing.</h2>
+        <p class="section-body">Twelve years of metal buildings across southern Oklahoma and north Texas — and not one job we wouldn't put our name on a second time.</p>
+        <ul class="why-points">
+          <li><div><strong>Run by a Coleman, never subbed</strong><span>Every crew is on our payroll. The person quoting your job is the person standing on it.</span></div></li>
+          <li><div><strong>Engineered to local loads</strong><span>Stamped drawings for the wind, snow, and seismic loads your property actually sees.</span></div></li>
+          <li><div><strong>40-year panel warranty</strong><span>Industry-leading panel + paint warranty plus our own written workmanship guarantee.</span></div></li>
+          <li><div><strong>Permits &amp; concrete handled</strong><span>We pull the permits, pour the slab, and stay on-site until the last anchor is torqued.</span></div></li>
+        </ul>
+      </div>
+      <div>
+        <div class="why-stats">
+          <div class="stat"><div class="num">12<span class="accent">yr</span></div><div class="lab">Family-Owned</div></div>
+          <div class="stat"><div class="num">600+</div><div class="lab">Buildings Erected</div></div>
+          <div class="stat"><div class="num">40<span class="accent">yr</span></div><div class="lab">Panel Warranty</div></div>
+          <div class="stat"><div class="num">90<span class="accent">mph</span></div><div class="lab">Wind Rated</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Recent Work</div>
+      <h2 class="section-title">Real jobs, real properties.</h2>
+      <p class="section-body">Every build below is finished and standing somewhere within an hour of Kingston. Click any project for full specs and photos.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="g tall g1"><div class="bg"></div><div class="meta">40×60 SHOP · MADILL, OK</div></div>
+      <div class="g g2"><div class="bg"></div><div class="meta">30×40 POLE BARN · DURANT</div></div>
+      <div class="g g3"><div class="bg"></div><div class="meta">WRAP PORCH · KINGSTON</div></div>
+      <div class="g g4"><div class="bg"></div><div class="meta">RV COVER · LAKE TEXOMA</div></div>
+      <div class="g g5"><div class="bg"></div><div class="meta">HAY BARN · TISHOMINGO</div></div>
+    </div>
+    <div class="gal-cta">
+      <div style="font-family: var(--font-body); color: var(--steel); font-size: 15px;">Browsing 5 of 80+ projects in the portfolio.</div>
+      <a class="btn btn-dark" href="#">View Full Gallery</a>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">How It Works</div>
+      <h2 class="section-title">Four steps, start to finish.</h2>
+    </div>
+    <div class="proc-grid">
+      <div class="proc"><div class="step">01</div><h4>Site Visit</h4><p>We walk your property, measure, and talk through what you actually need — usually within a week of your call.</p></div>
+      <div class="proc"><div class="step">02</div><h4>Quote &amp; Drawings</h4><p>You get a written quote and stamped engineering drawings inside ten business days. No "ballpark."</p></div>
+      <div class="proc"><div class="step">03</div><h4>Permits &amp; Slab</h4><p>We pull the permits, pour the concrete, and schedule erection around your calendar — not ours.</p></div>
+      <div class="proc"><div class="step">04</div><h4>Build &amp; Walk-Through</h4><p>Crews are on-site daily until the last anchor is torqued. We walk the finished building with you before we leave.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="container">
+    <div class="qt-wrap">
+      <div class="qt-photo"></div>
+      <div>
+        <div class="eyebrow">From the Job Site</div>
+        <blockquote>"They quoted what they built, and they built what they quoted. First contractor I've worked with where there were zero change orders."</blockquote>
+        <div class="qt-attrib">
+          <div class="stripe"></div>
+          <div class="who">Rob Whitaker<small>40×60 Shop · Madill, OK</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="quote">
+  <div class="container cta-wrap">
+    <div>
+      <h2>Let's talk about your build.</h2>
+      <p>Quotes are free, drawings are stamped, and the person picking up the phone is on every job. Reach out and we'll be on your property within the week.</p>
+    </div>
+    <div class="ph-row">
+      <div class="eyebrow" style="color: var(--cream)"><span style="background: var(--cream); width: 24px; height: 4px; display:inline-block; margin-right: 12px"></span>Call us direct</div>
+      <div class="ph">(580) 555-0142</div>
+      <a class="btn" style="background: var(--ink); color: var(--cream)" href="#">Request a Quote Online →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container">
+    <div class="ft-top">
+      <div>
+        <div class="ft-wordmark">COLEMAN</div>
+        <div class="ft-tag">Metal Buildings · Kingston, OK</div>
+        <p class="ft-blurb">Custom metal buildings, engineered to last. Family-owned in Kingston, Oklahoma since 2014 — serving southern OK and north Texas.</p>
+      </div>
+      <div class="ft-col">
+        <h5>Services</h5>
+        <a>Pole Barns</a><a>Shop Buildings</a><a>Porches &amp; Decks</a><a>RV Covers</a><a>Hay Barns</a><a>Custom Builds</a>
+      </div>
+      <div class="ft-col">
+        <h5>Company</h5>
+        <a>About</a><a>Gallery</a><a>Warranty</a><a>Service Area</a><a>Careers</a>
+      </div>
+      <div class="ft-col">
+        <h5>Get In Touch</h5>
+        <a>(580) 555-0142</a><a>build@colemanmetal.com</a><a>1234 Hwy 70 E<br>Kingston, OK 73439</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Coleman Metal Buildings LLC</span>
+      <span>Licensed · Bonded · Insured</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
